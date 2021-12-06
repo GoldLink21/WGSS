@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='main.css'>
+    <script src='main.js' defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class='apps'>
+        <div class="app appMessage"><img src="img/speech-bubble.png" alt="Sorry the image did not load" class="appImg"><br><span class="appLabel">Messages</span></div>
+        <div class="app appPhone"><img src="img/phone.png" alt="Sorry the image did not load" class="appImg"><br><span class="appLabel">Phone</span></div>
+        <div class="app appSettings"><img src="img/settings.png" alt="Sorry the image did not load" class="appImg"><br><span class="appLabel">Settings</span></div>
+        <!--<div class="app"><img src="" alt="Sorry the image did not load" class="appImg"><br><span class="appName">Appname</span></div>
+        <div class="app"><img src="" alt="Sorry the image did not load" class="appImg"><br><span class="appName">Appname</span></div>-->
+    </div>
+    <div class='messages pages' id='messagesPage'>
+        <button class="button" id='closePage' onclick="closePage(messagesPage)">Close</button>
+        <button class='button hidden' id='backToContactsButton' onclick='backToContacts()'>Back</button>
+        <h2 class='messagesLabel'>Messages</h2>
+        <div class="textMessages">
+            <!-- Structure after running to make this
+                <div .contact #contactFor${}>
+                    <div .contactCard #cardFor${}>
+                        <img src='./img/${}Card.png'>
+                        <h2>${}</h2>
+                    </div>
+                    -----This part repeat for every message
+                    <div .[dateMsg,youMsg,otherMsg]>${msgText}</div>
+
+                </div>    
+            -->
+
+        </div>
+    </div>
+    <div class='alert pages' id='alertOverlay'>
+        <h2 id='alertMessage'></h2>
+        <button class="button" onclick="closePage(alertOverlay)">Close</button>
+    </div>
+    <div class='settings pages' id='settingsPage'>
+        <button class="button" onclick="closePage(settingsPage)">Close</button>
+        <h2>Settings</h2>
+    </div>
+</body>
+</html>
