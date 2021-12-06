@@ -73,11 +73,7 @@ html{
     animation: growAlert 0.4s;
     height:40%
 }
-.deactivate {
-    width: 0%;
-    height: 0%;
-    animation: growOut 0.4s;
-}
+
 
 /*
     Holds the window with the image and name of the contact you click on to get to the chat
@@ -93,10 +89,10 @@ html{
 }
 /*
     Holds the contact card and messages
-    .contact{
-        
-    }
     */
+.contact{
+    scroll-behavior: smooth;        
+}
 .cardName{
     vertical-align: middle;
     font-size: 7vh;
@@ -194,7 +190,14 @@ h2 {
 
 .dateMsg{
     text-align: center;
+    font-size: larger;
     margin:2%;
+    background-color: darkgrey;
+    border-radius: 50%;
+    width: fit-content;
+    padding: 12px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .otherMsg{
     width: fit-content;
@@ -245,7 +248,38 @@ h2 {
     border-bottom: 20px solid transparent;
     right: 32px;
     bottom: -12px;
-  }
+}
+
+.alert {
+    background-color: var(--color-4);
+    z-index: 100;
+}
+
+.amberImg{
+    width: 40%;
+    height: 40%;
+}
+
+.credits{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+.credits p{
+    font-size: large;
+    display: inline;
+    text-align: right;
+}
+.credits div{
+    display: inline;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.credits p:after, .credits div:after{
+    content:"\a";
+    white-space: pre;
+}
 
 @keyframes growIn {
     from{
@@ -284,6 +318,6 @@ h2 {
     }
     to{
         width:100%;
-        height: 40%;
+        height: 40;
     }
 }

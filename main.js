@@ -4,6 +4,7 @@ var settingsPage = document.getElementById("settingsPage")
 
 //Get all app divs and add their click events
 Array.from(document.getElementsByClassName("app")).forEach(app=>{
+    //Different apps  open different pages 
     app.addEventListener('click',e=>{
         if(app.classList.contains("appMessage")){ 
             openPage(messagesPage);
@@ -18,7 +19,7 @@ Array.from(document.getElementsByClassName("app")).forEach(app=>{
 });
 
 /**
- * @typedef {{[x:string]:[{who:string,text:string}]}} Conversation 
+ * @typedef {{[x:string]:{who:string,text:string}[]}} Conversation 
  * Used for what gets parsed from conversations.json
  */
 
@@ -41,6 +42,7 @@ function openPage(page){
 
 /**@param {string} msg */
 function openAlert(msg){
+    alertOverlay.classList.remove('activeAlert')
     alertOverlay.classList.add('activeAlert')
     alertOverlay.classList.remove('deactivate');
     document.getElementById("alertMessage").innerHTML = msg;
@@ -78,12 +80,11 @@ async function loadJSON(){
 
 /**Makes the HTML for the json from loadJSON */
 async function loadConversations() {
-    document.getElementById("msgOverlay");
     return loadJSON().then(/**@param {Conversation} val*/val=>{
         /**These are the messages from everyone */
         let msgs = document.getElementsByClassName("textMessages")[0];
         //Go through all people
-        for(let key in val){
+        for(let key in val) {
             //First create header that holds all messages, keeping the contact open at the top
             let contact = document.createElement("div");
             contact.id = 'contactFor'+key;
@@ -91,7 +92,7 @@ async function loadConversations() {
             //Create contact card
             contact.innerHTML = 
             `<div class='contactCard' id='cardFor${key}'>
-                <img class='cardImg' src='./img/${key}Card.png' onerror='this.onerror=null;this.src="./img/noImg.png"'>
+                <img class='cardImg' src='./img/${key.toLowerCase()}Card.png' onerror='this.onerror=null;this.src="./img/noImg.png"'>
                 <div class='cardName'>${key}</div>
             </div>`
             
@@ -108,6 +109,10 @@ async function loadConversations() {
                 let clazz = (val[key][i].who == "Date")?"dateMsg":(val[key][i].who =='You')?"youMsg":"otherMsg"
                 personMsgs.innerHTML += `<div class='${clazz}'>${val[key][i].text}</div>`
             }
+            if (val[key].length == 0){
+                personMsgs.innerHTML+=`<div class='dateMsg'>You haven't messaged ${key}.</div>`
+            }
+
             msgs.appendChild(contact)
         }
         return msgs;
@@ -146,3 +151,9 @@ function backToContacts(){
 }
 
 loadConversations()
+
+setTimeout(()=>{
+    openAlert(`Amber Alert!<br><img src='./img/alex.png' class='amberImg'>`)
+},60*1000*5)
+
+openAlert("You have found a phone. Try to figure out the story behind it")

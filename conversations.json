@@ -1,5 +1,8 @@
 
 {
+    "Joe (Chem Partner)":[
+        {"who":"Joe","text":"hey when's the chem hw due"}
+    ],
     "Birth Giver":[
         {"who":"Date","text":"Jan 10 10:32am"},
         {"who":"Mom","text":"Hello?"},
@@ -23,16 +26,10 @@
         {"who":"Friend","text":"How's it going?"},
         {"who":"You","text":"Things have been better"}
     ],
-    "Bob":[
-        {"who":"Bob","text":"How's it going?"}
-    ],
     "Alice":[
 
     ],
     "Dale":[
 
-    ],
-    "Joe (Chem Partner)":[
-        {"who":"Joe","text":"hey when's the chem hw due"}
     ]
 }
