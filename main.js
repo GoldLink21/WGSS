@@ -156,24 +156,29 @@ function backToContacts(){
 
 loadConversations()
 
-setTimeout(()=>{
-    openAlert(
+function callAmberAlert(){
+openAlert(
 `Amber Alert!
 <p>Name: Alexander Greene</p>
+<p>Missing From: Salt Lake City Utah</p>
 <div class='amberHolder'>
-    <img src='./img/alex.png' class='amberImg'>
-    <div>
-        Height: 5'8"<br>
-        Weight: 153lbs.<br>
-        Age:    15<br>
-        Last Seen Friday night after school
-    </div>
+<img src='./img/alex.png' class='amberImg'>
+<div>
+    Height:  5'8"<br>
+    Missing: July 17 2015
+    Weight:  153lbs.<br>
+    Age:     15<br>
+    Last Seen Friday night after school
+</div>
 </div>
 <p></p>
 `)
-},60*1000*1)
 
-openAlert("You have found a phone. Try to figure out the story behind it")
+}
+
+setTimeout(callAmberAlert,60*1000*3.25);
+
+openAlert("You have found a phone. Try to figure out the story behind it!")
 
 
 /**@param {string} str @param {string} who */

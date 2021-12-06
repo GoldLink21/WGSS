@@ -1,19 +1,55 @@
 
 {
     "Joe (Chem Partner)":[
-        {"who":"Joe","text":"hey when's the chem hw due"}
+            {"who":"Date","text":"Mon July 13 2015 12:23pm"},
+        {"who":"Joe (Chem Partner)","text":"Hey this is Joe, just making sure this is the right number"},
+        {"who":"You","text":"yeah this is alex"},
+        {"who":"Joe (Chem Partner)","text":"okay cool, cool"},
+            {"who":"Date","text":"Tues July 14 2015 1:05pm"},
+        {"who":"You","text":"so i sent you a google drive for our project i've already put some ideas on there so you can just use that for your ideas."},
+        {"who":"Joe (Chem Partner)","text":"yeah i'm gonna totally get on that bud."},
+        {"who":"You","text":"just try to get some work done tonight im gonna be a bit busy tonight"},
+        {"who":"Joe (Chem Partner)","text":"of course you are"},
+            {"who":"Date","text":"Fri July 17 2015 2:33pm"},
+        {"who":"Joe (Chem Partner)","text":"hey dude are you gonna update your half of the project. Its due monday."},
+            {"who":"Date","text":"Sun July 19 2015 10:13pm"},
+        {"who":"Joe (Chem Partner)","text":"hey alex. I dont wanna push but i really need a good grade on this project so could you help out."}
     ],
     "Birth Giver":[
         
     ],
     "Lars":[
-        
+            {"who":"Date","text":"Mon July 13 2015 7:54pm"},
+        {"who":"Lars","text":"Hey what did you get for #9 on the algebra homework im freaking stumped"},
+        {"who":"You","text":"wouldn't you like to know. Maybe if you didn't sleep through the class all the time you wouldn't be a cut down tree"},
+        {"who":"Lars","text":" you’re an absolute dumbass you know that Alex"},
+        {"who":"You","text":"im the dumbass but you couldn't figure out x=2"},
+        {"who":"Lars","text":"yes you are because you just finished my homework for me haha"},
+            {"who":"Date","text":"Tues July 14 12:26pm"},
+        {"who":"Lars","text":"Are you coming over tonight for the new episode of Steven Universe?"},
+        {"who":"You","text":"ah shit thats tonight?"},
+        {"who":"Lars","text":"dua… so are you coming or what"},
+        {"who":"You","text":"  yeah ill be there after class. Want me to bring anything"},
+        {"who":"Lars","text":"yeah can you bring something to drink"},
+        {"who":"You","text":"Totally ill see you then <3"},
+            {"who":"Date","text":"Tues July 14 11:26pm"},
+        {"who":"You","text":"Omg i just home from dinner with Alice and she told me she found my stash!!"},
+        {"who":"Lars","text":"DUDE WHAT DID SHE SAY!?!?!"},
+        {"who":"You","text":"she was actually really cool about it. I explained everything to her and she was so supportive. i felt like i was gonna puke when she brought it up but she told me she would tach me things and she bought me a new dress"},
+        {"who":"Lars","text":"I knew I liked alice. I'm glad you have a supportive family member. I remember when i came out… or rather dragged out"},
+        {"who":"You","text":"I remember. I'm glad your aunt got you out of there."},
+        {"who":"Lars","text":"yeah, me too"},
+            {"who":"Date","text":"Fri July 17 11:02am"},
+        {"who":"You","text":"LARZ I NEED YOU"},
+        {"who":"Lars","text":"whats up? whats wrong??"},
+        {"who":"You","text":"MEET ME BEHIND THE BLEACHERS ASAP!"},
+        {"who":"Lars","text":"okay okay im on the way!"}
     ],
     "Alice":[
-            {"who":"Date","text":"Mon July 13 2015"},
+            {"who":"Date","text":"Mon July 13 2015 4:17pm"},
         {"who":"Alice","text":"Hey bro im going to the mall want to come?"},
         {"who":"You","text":"Im working on a chem assignment right now. Raincheck?"},
-            {"who":"Date","text":"Tues July 14 2015"},
+            {"who":"Date","text":"Tues July 14 2015 4:43pm"},
         {"who":"You","text":"can you pick me up from larz’s house at 6"},
         {"who":"Alice","text":"yeah thats fine"},
         {"who":"Alice","text":"mom and dale are gonna be out for her company party, wanna go out for dinner??"},
