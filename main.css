@@ -36,33 +36,34 @@ html{
 
 /* CSS */
 .button {
-  background-color: initial;
-  background-image: var(--button-color);
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
-  color: black;
-  cursor: pointer;
-  display: inline-block;
-  height: 44px;
-  line-height: 44px;
-  outline: 0;
-  overflow: hidden;
-  padding: 0 20px;
-  pointer-events: auto;
-  position: relative;
-  text-align: center;
-  touch-action: manipulation;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: top;
-  white-space: nowrap;
-  width: 30%;
-  z-index: 9;
-  border: 0;
+    background-color: initial;
+    background-image: var(--button-color);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 30%;
+    z-index: 9;
+    border: 0;
 }
 
 .button:hover {
-  background: #00bd68;
+    background: #00bd68;
+
 }
 .activePage {
     display: block;
@@ -91,8 +92,15 @@ html{
     Holds the contact card and messages
     */
 .contact{
-    scroll-behavior: smooth;        
+    scroll-behavior: smooth; 
+    cursor: default;       
 }
+.contactHover:hover{
+    cursor: pointer;
+    filter:brightness(0.85);
+    color:blue;
+}
+
 .cardName{
     vertical-align: middle;
     font-size: 7vh;
@@ -256,8 +264,12 @@ h2 {
 }
 
 .amberImg{
+    float:left;
     width: 40%;
     height: 40%;
+}
+.amberHolder{
+
 }
 
 .credits{

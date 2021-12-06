@@ -89,6 +89,7 @@ async function loadConversations() {
             let contact = document.createElement("div");
             contact.id = 'contactFor'+key;
             contact.classList.add("contact");
+            contact.classList.add("contactHover");
             //Create contact card
             contact.innerHTML = 
             `<div class='contactCard' id='cardFor${key}'>
@@ -130,12 +131,14 @@ function addContactClickHandler(contact, msgs){
         .filter(e=>e!==contact)
         .forEach(e=>{
             e.classList.add("hidden");
+            e.classList.remove("contactHover");
+
         });
         msgs.classList.add("shown");
         document.getElementById("closePage").classList.add("hidden");
         document.getElementById("backToContactsButton").classList.remove("hidden")
         document.getElementsByClassName("messagesLabel")[0].classList.add("hidden");
-
+        contact.classList.remove("contactHover");
     })
 }
 function backToContacts(){
@@ -147,13 +150,38 @@ function backToContacts(){
     })
     Array.from(document.getElementsByClassName("contact")).forEach(e=>{
         e.classList.remove("hidden");
+        e.classList.add("contactHover");
     })
 }
 
 loadConversations()
 
 setTimeout(()=>{
-    openAlert(`Amber Alert!<br><img src='./img/alex.png' class='amberImg'>`)
-},60*1000*5)
+    openAlert(
+`Amber Alert!
+<p>Name: Alexander Greene</p>
+<div class='amberHolder'>
+    <img src='./img/alex.png' class='amberImg'>
+    <div>
+        Height: 5'8"<br>
+        Weight: 153lbs.<br>
+        Age:    15<br>
+        Last Seen Friday night after school
+    </div>
+</div>
+<p></p>
+`)
+},60*1000*1)
 
 openAlert("You have found a phone. Try to figure out the story behind it")
+
+
+/**@param {string} str @param {string} who */
+function fixIt(str,who){
+    return str.split("\n")
+        .map(s=>s.trim())
+        .map(s=>
+            `{"who":"${(s[0]=='=')?who:"You"}","text":"${s.substring(1)}"}`
+        )
+        .join(",");
+}
