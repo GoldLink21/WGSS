@@ -23,39 +23,40 @@ Array.from(document.getElementsByClassName("app")).forEach(app=>{
  * Used for what gets parsed from conversations.json
  */
 
-/**@type {Conversation} */
-var conv;
-
-/**@param {Element} page */
+/**
+ * Closes the specific page element
+ * @param {Element} page
+ */
 function closePage(page){
     page.classList.remove('activePage')
     page.classList.remove("activeAlert")
     page.classList.add('deactivate');
 }
 
-/**@param {HTMLElement} page */
+/**
+ * Opens the specified page and closes all the others
+ * @param {HTMLElement} page 
+ */
 function openPage(page){
     Array.from(document.querySelectorAll(".pages")).filter(e=>e!=page).forEach(e=>closePage(e));
     page.classList.add('activePage')
     page.classList.remove('deactivate');
 }
 
-/**@param {string} msg */
+/**
+ * Opens the alert tab with the specified text
+ * @param {string} msg 
+ */
 function openAlert(msg){
     alertOverlay.classList.remove('activeAlert')
-    alertOverlay.classList.add('activeAlert')
     alertOverlay.classList.remove('deactivate');
+    alertOverlay.classList.add('activeAlert')
     document.getElementById("alertMessage").innerHTML = msg;
 }
 
 /**
- * After clicking on a message, this will go back to the contacts
+ * Gets contents of the conversatiosn.json file and loads it into an object 
  */
-function goBackFromMessages(){
-    document.querySelectorAll(".textMessage");
-}
-
-/**Gets contents of the conversatiosn.json file and loads it into an object */
 async function loadJSON(){
     return fetch("./conversations.json")
         //Get the JSON
@@ -74,11 +75,11 @@ async function loadJSON(){
                 resolve(val);
             })
         )
-        //Save if good
-        .then(res=>conv = res)
 }
 
-/**Makes the HTML for the json from loadJSON */
+/**
+ * Makes the HTML for the json from loadJSON and attaches it to the page
+ */
 async function loadConversations() {
     return loadJSON().then(/**@param {Conversation} val*/val=>{
         /**These are the messages from everyone */
@@ -113,7 +114,6 @@ async function loadConversations() {
             if (val[key].length == 0){
                 personMsgs.innerHTML+=`<div class='dateMsg'>You haven't messaged ${key}.</div>`
             }
-
             msgs.appendChild(contact)
         }
         return msgs;
@@ -121,7 +121,7 @@ async function loadConversations() {
 }
 
 /**
- * 
+ * Adds the click handler to contacts to open all their messages
  * @param {HTMLDivElement} contact 
  * @param {HTMLDivElement} msgs 
  */
@@ -141,6 +141,10 @@ function addContactClickHandler(contact, msgs){
         contact.classList.remove("contactHover");
     })
 }
+
+/**
+ * Called when on a page for someone's text to go back to all contacts
+ */
 function backToContacts(){
     document.getElementById("closePage").classList.remove("hidden");
     document.getElementById("backToContactsButton").classList.add("hidden")
@@ -156,6 +160,9 @@ function backToContacts(){
 
 loadConversations()
 
+/**
+ * Opens an alert with the amber alert text for Alex
+ */
 function callAmberAlert(){
 openAlert(
 `Amber Alert!
@@ -165,7 +172,7 @@ openAlert(
 <img src='./img/alex.png' class='amberImg'>
 <div>
     Height:  5'8"<br>
-    Missing: July 17 2015
+    Missing: July 17 2015<br>
     Weight:  153lbs.<br>
     Age:     15<br>
     Last Seen Friday night after school
@@ -173,13 +180,11 @@ openAlert(
 </div>
 <p></p>
 `)
-
 }
 
 setTimeout(callAmberAlert,60*1000*3.25);
 
 openAlert("You have found a phone. Try to figure out the story behind it!")
-
 
 /**@param {string} str @param {string} who */
 function fixIt(str,who){

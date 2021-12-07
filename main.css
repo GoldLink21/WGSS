@@ -6,6 +6,7 @@
     --color-4:#F06543;
     --color-5:#BAD7F2;
     --other-text-color:#b7f;
+    --alert-height:45%;
 }
 ::-webkit-scrollbar{
     display: none;
@@ -72,7 +73,7 @@ html{
 .activeAlert {
     display: block;
     animation: growAlert 0.4s;
-    height:40%
+    height:var(--alert-height)
 }
 
 
@@ -229,7 +230,6 @@ h2 {
     padding: 20px;
     text-align: center;
     color: #000;
-
     margin-bottom: 12px;
   }
   
@@ -328,10 +328,10 @@ h2 {
     }
     75%{
         width: 101%;
-        height: 41%;
+        height: calc(var(--alert-height) + 1%);
     }
     to{
         width:100%;
-        height: 40;
+        height: var(--alert-height);
     }
 }
