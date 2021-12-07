@@ -175,7 +175,7 @@ openAlert(
     Missing: July 17 2015<br>
     Weight:  153lbs.<br>
     Age:     15<br>
-    Last Seen Friday night after school
+    Last Seen Friday night after school around 3:00pm
 </div>
 </div>
 <p></p>
